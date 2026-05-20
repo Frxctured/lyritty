@@ -12,10 +12,11 @@ import pylrc
 from typing import Optional
 
 def clear_screen():
-    if os.name == 'nt':
-        os.system('') 
-    sys.stdout.write("\033[H\033[2J")
-    sys.stdout.flush()
+    if os.name != "nt":
+        subprocess.run(["clear"])
+    else:
+        sys.stdout.write("\033[H\033[2J")
+        sys.stdout.flush()
 
 def hide_cursor():
     sys.stdout.write("\033[?25l")
