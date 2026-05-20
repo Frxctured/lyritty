@@ -92,5 +92,5 @@ See `requirements.txt` for exact versions.
 - This repository contains AI generated code
 - This repository does NOT provide a method of getting audio or lrc files. 
   - For audio, see [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-  - For lyrics, see [lsync](https://github.com/mikezzb/lyrics-sync/tree/main)  
+  - For lyrics, see [lsync](https://github.com/mikezzb/lyrics-sync)  
   [This "tutorial"](LSYNC.md) shows how I used lsync to generate lyrics
