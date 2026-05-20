@@ -40,6 +40,14 @@ python main.py -l songs/example.lrc -a songs/example.mp3
 python main.py -l songs/example.lrc
 ```
 
+## Example GIF
+
+### Plain Example
+![example](.github/example.gif)
+
+### With cava
+![example](.github/example-with-cava.gif)
+
 ## LRC File Format
 
 LRC files contain lyrics with timestamps in the format:  
