@@ -14,9 +14,17 @@ A terminal-based lyrics display tool that shows song lyrics in big Unicode block
 ## Installation
 
 1. Clone or download this project
-2. Install dependencies:
+2. Install dependencies using pip with the project file:
    ```bash
-   pip install -r requirements.txt
+   pip install .
+   ```
+   Or with `uv`:
+   ```bash
+   uv pip install .
+   ```
+   Or install globally with `pipx`:
+   ```bash
+   pipx install .
    ```
 3. Install system libraries (Fedora):
    ```bash
@@ -24,6 +32,8 @@ A terminal-based lyrics display tool that shows song lyrics in big Unicode block
    ```
 
 ## Usage
+
+If installed globally use `lyritty` instead of `python main.py`
 
 ### By song path (looks for `.lrc` and `.mp3` files):
 ```bash

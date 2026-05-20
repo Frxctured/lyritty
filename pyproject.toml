@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lyritty"
+version = "0.1.0"
+description = "A command line lyrics tool"
+dependencies = [
+    "pylrc",
+    "pygame",
+    "setuptools",
+]
+
+[project.scripts]
+lyritty = "lyritty:main"
+
+[tool.setuptools]
+py-modules = ["lyritty"]

@@ -1,3 +1,5 @@
 .venv
+*.egg-info
+build
 # I don't want trouble from any copyright crap LOL
 songs/bunii 

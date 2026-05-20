@@ -1,14 +1,15 @@
-import argparse
 import os
+import warnings
+# These must come before apparently
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
+warnings.filterwarnings('ignore', category=RuntimeWarning)
+import argparse
 import sys
 import time
 import pygame
 import pylrc
 from typing import Optional
 
-os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
-import warnings
-warnings.filterwarnings('ignore', category=RuntimeWarning)
 
 
 BLOCKS = {
@@ -188,7 +189,7 @@ class Song:
             os.system('clear')
 
 def main():
-    parser = argparse.ArgumentParser(description="Handle names or specific file paths.")
+    parser = argparse.ArgumentParser(description="A command line lyrics tool")
 
     parser.add_argument(
         'path', 
