@@ -4,12 +4,25 @@ import warnings
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1'
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 import argparse
+import subprocess
 import sys
 import time
 import pygame
 import pylrc
 from typing import Optional
 
+def clear_screen():
+    subprocess.run(["clear"] if os.name != "nt" else ["cls"])
+    #os.system('cls' if os.name == "nt" else 'clear')
+
+def hide_cursor():
+    sys.stdout.write("\033[?25l")
+    sys.stdout.flush()
+    pass
+
+def show_cursor():
+    sys.stdout.write("\033[?25h")
+    sys.stdout.flush()
 
 
 BLOCKS = {
@@ -121,8 +134,8 @@ class Song:
             pygame.mixer.music.play()
         
         # Clear screen and hide cursor
-        os.system('clear')
-        os.system('tput civis')  # Hide cursor
+        clear_screen()
+        hide_cursor()
         
         start_time = time.time()
         
@@ -172,7 +185,7 @@ class Song:
                     blank_lines_before = (height - len(text_lines)) // 2
                     
                     # Clear screen and move cursor to home
-                    os.system('cls' if os.name == 'nt' else 'clear')
+                    clear_screen()
                     # Move down to vertical center
                     for _ in range(blank_lines_before):
                         sys.stdout.write("\033[B")
@@ -185,8 +198,8 @@ class Song:
             if self.audio != None:
                 pygame.mixer.music.stop()
                 pygame.mixer.quit()
-            os.system('tput cnorm')  # Show cursor
-            os.system('clear')
+            show_cursor()
+            clear_screen()
 
 def main():
     parser = argparse.ArgumentParser(description="A command line lyrics tool")
