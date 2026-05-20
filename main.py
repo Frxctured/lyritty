@@ -181,7 +181,7 @@ class Song:
                 time.sleep(0.01)  # Avoid CPU spinning
         
         finally:
-            if self.audio_path != None:
+            if self.audio != None:
                 pygame.mixer.music.stop()
                 pygame.mixer.quit()
             os.system('tput cnorm')  # Show cursor
